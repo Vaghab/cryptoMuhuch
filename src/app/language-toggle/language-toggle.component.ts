@@ -21,9 +21,7 @@ export class LanguageToggleComponent implements OnInit {
   public selectedLang: string = 'ru';
 
   ngOnInit() {
-    if (window !== undefined) {
-      this.translate.use(localStorage.getItem('lang') || 'ru');
-    }
+    this.translate.use(localStorage.getItem('lang') || 'ru');
   }
 
   selectLanguage() {

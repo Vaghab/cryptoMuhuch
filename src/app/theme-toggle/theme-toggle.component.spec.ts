@@ -5,4 +5,6 @@ import { DebugElement } from '@angular/core';
 
 import { ThemeToggleComponent } from './theme-toggle.component';
 
-describe('ThemeToggleComponent', () => {});
+describe('ThemeToggleComponent', () => {
+  it('');
+});
