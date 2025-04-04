@@ -1,0 +1,10 @@
+.app-header {
+  display: flex;
+}
+
+.app-header__controls {
+  display: flex;
+  margin-left: auto;
+  gap: 8px;
+  padding: 4px;
+}
