@@ -1,0 +1,9 @@
+{
+  "TITLE": "Softapp",
+  "HELLO": "Hello, {name}",
+  "HOME": "Home",
+  "SERVICES": "Services",
+  "PORTFOLIO": "Portfolio",
+  "ABOUT": "About",
+  "CONTACT": "Contact"
+}
