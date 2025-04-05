@@ -1,0 +1,13 @@
+<dx-form
+  [formData]="signUpForm.value"
+  [minColWidth]="200"
+  width="400"
+  requiredMessage="Field is required"
+  (onFieldDataChanged)="onFieldDataChanged($event)"
+>
+</dx-form>
+<dx-button
+  text="Sign Up"
+  [disabled]="signUpForm.invalid"
+  (onClick)="signUp()"
+></dx-button>
