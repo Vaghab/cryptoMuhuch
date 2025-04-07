@@ -6,6 +6,8 @@
 </header>
 
 <h1>{{ "TITLE" | translate }}</h1>
-<p>{{ "HELLO" | translate : { name: "Иван" } }}</p>
+<p>
+  {{ "HELLO" | translate }} <span>{{ name }}</span>
+</p>
 
 <app-authentication></app-authentication>

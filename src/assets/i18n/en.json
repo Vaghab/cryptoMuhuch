@@ -1,9 +1,13 @@
 {
   "TITLE": "Softapp",
-  "HELLO": "Hello, {name}",
+  "HELLO": "Hello",
   "HOME": "Home",
   "SERVICES": "Services",
   "PORTFOLIO": "Portfolio",
   "ABOUT": "About",
-  "CONTACT": "Contact"
+  "CONTACT": "Contact",
+  "INVALID_EMAIL_FORMAT": "Invalid email format, try again",
+  "DISALLOWED_DOMAIN": "Invalid email domain, try again",
+  "NOT_MATCHED_PASSWORDS": "Passwords do not match, try again",
+  "EMAIL_REQUIRED": "Email is required"
 }

@@ -17,4 +17,6 @@ import { AuthenticationComponent } from './authentication/authentication.compone
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {}
+export class AppComponent {
+  public name = 'Angular';
+}

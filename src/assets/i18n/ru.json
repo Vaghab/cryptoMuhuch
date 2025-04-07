@@ -1,9 +1,13 @@
 {
   "TITLE": "Мягкое Прижоление",
-  "HELLO": "Привет, {name}",
+  "HELLO": "Привет",
   "HOMME": "Дом",
   "SERVICES": "Услуги",
   "PORTFOLIO": "Портфолио",
   "ABOUT": "О нас",
-  "CONTACT": "Контакты"
+  "CONTACT": "Контакты",
+  "INVALID_EMAIL_FORMAT": "Неверный формат почты, введите еще раз",
+  "DISALLOWED_DOMAIN": "Неверный домен почты, введите еще раз",
+  "NOT_MATCHED_PASSWORDS": "Пароли не совпадают, введите еще раз",
+  "EMAIL_REQUIRED": "Почта обязательна"
 }
