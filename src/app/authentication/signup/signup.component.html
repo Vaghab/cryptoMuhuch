@@ -1,0 +1,68 @@
+<dx-form
+  [formData]="signUpForm.value"
+  [minColWidth]="200"
+  width="400"
+  requiredMessage="Field is required"
+  (onFieldDataChanged)="onFieldDataChanged($event)"
+>
+  <dxi-item dataField="name"></dxi-item>
+  <dxi-item dataField="surname"></dxi-item>
+  <dxi-item dataField="login"></dxi-item>
+  <dxi-item dataField="email" [editorOptions]="{ mode: 'email' }">
+    <dxi-validation-rule
+      type="email"
+      message="Invalid email"
+    ></dxi-validation-rule>
+  </dxi-item>
+  <dxi-item
+    dataField="phone"
+    [editorOptions]="{ mask: '+7 (000) 000-00-00', type: 'tel' }"
+  ></dxi-item>
+  <dxi-item
+    dataField="password"
+    [editorOptions]="{ mode: 'password' }"
+  ></dxi-item>
+  <dxi-item
+    dataField="confirmPassword"
+    [editorOptions]="{ mode: 'password' }"
+  ></dxi-item>
+
+  <dxi-item dataField="terms" editorType="dxCheckBox"></dxi-item>
+  <dxi-item dataField="agree" editorType="dxCheckBox"></dxi-item>
+</dx-form>
+<dx-button
+  text="Sign Up"
+  [disabled]="formInvalid"
+  (onClick)="signUp()"
+></dx-button>
+
+@if(signUpForm.controls.email.value.length !== 0 &&
+signUpForm.controls.email.invalid){
+<dx-toast
+  [visible]="true"
+  type="error"
+  [message]="'EMAIL_REQUIRED' | translate"
+  duration="2000"
+></dx-toast>
+} @if( signUpForm.controls.email.errors?.['disallowedDomain']){
+<dx-toast
+  [visible]="true"
+  type="error"
+  [message]="'DISALLOWED_DOMAIN' | translate"
+  duration="2000"
+></dx-toast>
+} @if(signUpForm.controls.email.errors?.['invalidEmailFormat']){
+<dx-toast
+  [visible]="true"
+  type="error"
+  [message]="'INVALID_EMAIL_FORMAT' | translate"
+  [displayTime]="2000"
+></dx-toast>
+} @if(passwordConfirm){
+<dx-toast
+  [visible]="true"
+  type="error"
+  [message]="'NOT_MATCHED_PASSWORDS' | translate"
+  [displayTime]="2000000"
+></dx-toast>
+}
