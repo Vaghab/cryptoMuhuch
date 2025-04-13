@@ -1,23 +1,22 @@
 // /* tslint:disable:no-unused-variable */
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
 // import { By } from '@angular/platform-browser';
 // import { DebugElement } from '@angular/core';
 
-// import { SignInComponent } from './signIn.component';
+// import { WelcomeComponent } from './welcome.component';
 
-// describe('SignInComponent', () => {
-//   let component: SignInComponent;
-//   let fixture: ComponentFixture<SignInComponent>;
+// describe('WelcomeComponent', () => {
+//   let component: WelcomeComponent;
+//   let fixture: ComponentFixture<WelcomeComponent>;
 
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [ SignInComponent ]
-//     })
-//     .compileComponents();
+//       declarations: [WelcomeComponent],
+//     }).compileComponents();
 //   }));
 
 //   beforeEach(() => {
-//     fixture = TestBed.createComponent(SignInComponent);
+//     fixture = TestBed.createComponent(WelcomeComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

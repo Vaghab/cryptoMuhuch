@@ -14,13 +14,20 @@ import {
   Validators,
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [DxFormModule, ReactiveFormsModule, DxButtonModule, TranslateModule],
+  imports: [
+    DxFormModule,
+    ReactiveFormsModule,
+    DxButtonModule,
+    TranslateModule,
+    RouterLink,
+  ],
 })
 export class SignInComponent {
   public readonly signInForm: FormGroup<{

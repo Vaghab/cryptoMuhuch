@@ -1,9 +1,16 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { LanguageToggleComponent } from './language-toggle/language-toggle.component';
 import { ThemeToggleComponent } from './theme-toggle/theme-toggle.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
+import { RouterModule } from '@angular/router';
+import { DxButtonModule } from 'devextreme-angular';
+import { AuthenticationService } from 'src/services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +18,26 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     TranslateModule,
     ThemeToggleComponent,
     LanguageToggleComponent,
-    AuthenticationComponent,
+    RouterModule,
+    DxButtonModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public name = 'Angular';
+
+  private readonly authService = inject(AuthenticationService);
+
+  ngOnInit(): void {
+    if (localStorage.getItem('auth') === 'true') {
+      this.authService.refreshAuthentication();
+    }
+  }
+
+  logout() {
+    localStorage.removeItem('auth');
+    this.authService.logoutUser();
+  }
 }

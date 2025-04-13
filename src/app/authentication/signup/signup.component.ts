@@ -35,7 +35,7 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
 })
 export class SignUpComponent {
-  readonly UserData: OutputEmitterRef<UserData> = output();
+  readonly newUser: OutputEmitterRef<UserData> = output();
 
   public readonly signUpForm = new FormGroup({
     login: new FormControl('', {
@@ -88,7 +88,7 @@ export class SignUpComponent {
   signUp() {
     const { agree, terms, confirmPassword, ...data } =
       this.signUpForm.getRawValue();
-    this.UserData.emit(data);
+    this.newUser.emit(data);
   }
 
   onFieldDataChanged(event: any) {

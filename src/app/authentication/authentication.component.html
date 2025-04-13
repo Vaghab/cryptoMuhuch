@@ -1,17 +1,20 @@
-<dx-tab-panel
-  width="100%"
-  [height]="'auto'"
-  [animationEnabled]="true"
-  [swipeEnabled]="true"
-  [dataSource]="dataSource"
-  [tabsPosition]="'bottom'"
-  [stylingMode]="'primary'"
->
-  <div *dxTemplate="let tabPanelItem of 'item'">
-    @if(tabPanelItem.title === 'Sign Up'){
-    <app-sign-up (newUser)="signUp($event)"></app-sign-up>
-    } @if(tabPanelItem.title === 'Sign In'){
-    <app-sign-in (loginUser)="signIn($event)"></app-sign-in>
-    }
+<div class="auth-wrapper">
+  <div class="auth-container">
+    <dx-tab-panel
+      width="100%"
+      [animationEnabled]="true"
+      [swipeEnabled]="true"
+      [dataSource]="dataSource"
+      [tabsPosition]="'top'"
+      [stylingMode]="'primary'"
+    >
+      <div *dxTemplate="let tabPanelItem of 'item'">
+        @if(tabPanelItem.title === 'Sign Up'){
+        <app-sign-up (newUser)="signUp($event)"></app-sign-up>
+        } @if(tabPanelItem.title === 'Sign In'){
+        <app-sign-in (loginUser)="signIn($event)"></app-sign-in>
+        }
+      </div>
+    </dx-tab-panel>
   </div>
-</dx-tab-panel>
+</div>

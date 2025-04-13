@@ -5,6 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { DxButtonModule } from 'devextreme-angular';
 
 @Component({
   selector: 'app-language-toggle',
@@ -12,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./language-toggle.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [TranslateService],
-  imports: [],
+  imports: [DxButtonModule],
 })
 export class LanguageToggleComponent implements OnInit {
   public readonly translate = inject(TranslateService);

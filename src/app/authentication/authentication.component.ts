@@ -9,29 +9,39 @@ import {
 import { SignUpComponent } from './signup/signup.component';
 import { AuthenticationService } from 'src/services/authentication.service';
 import { DxTabPanelModule } from 'devextreme-angular';
+import { LoginUser, UserData } from 'src/interfaces/interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-authentication',
   templateUrl: './authentication.component.html',
-  styleUrls: ['./authentication.component.css'],
+  styleUrls: ['./authentication.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SignUpComponent, SignInComponent, DxTabPanelModule],
 })
 export class AuthenticationComponent implements OnInit {
   private readonly authService = inject(AuthenticationService);
-  dataSource = [
+  private readonly router = inject(Router);
+
+  dataSource: { title: string }[] = [
     {
       title: 'Sign In',
     },
     { title: 'Sign Up' },
   ];
+
   ngOnInit(): void {}
 
-  signUp(event: any) {
+  signUp(event: UserData) {
     this.authService.createUser(event);
   }
 
-  signIn(event: any) {
-    this.authService.loginUser(event);
+  signIn(user: LoginUser) {
+    this.authService.loginUser(user);
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/']);
+      return;
+    }
+    console.log('Вход не выполнен');
   }
 }

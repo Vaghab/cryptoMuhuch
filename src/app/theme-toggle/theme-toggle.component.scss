@@ -1,24 +1,15 @@
-    .theme-toggle {
-    	background: var(--accent-color);
-    	/*ИспользуемCSS-переменнуюдляцвета*/
-    	color: white;
-    	border: none;
-    	width: 40px;
-    	height: 40px;
-    	display: flex;
-    	align-items: center;
-    	justify-content: center;
-    	cursor: pointer;
-    	transition: transform 0.3s ease;
+.theme-toggle {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
 
-    	border-radius: 10px;
-    	-webkit-border-radius: 10px;
-    	-moz-border-radius: 10px;
-    	-ms-border-radius: 10px;
-    	-o-border-radius: 10px;
-    }
-
-    /* Эффект при наведении */
-    .theme-toggle:hover {
-    	transform: scale(1.1);
-    }
+/* Эффект при наведении */
+.theme-toggle:hover {
+  transform: scale(1.1);
+}

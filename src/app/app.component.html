@@ -2,6 +2,9 @@
   <div class="app-header__controls">
     <app-theme-toggle></app-theme-toggle>
     <app-language-toggle></app-language-toggle>
+    <dx-button (onClick)="logout()" routerLink="/authentication"
+      >Выйти</dx-button
+    >
   </div>
 </header>
 
@@ -10,4 +13,7 @@
   {{ "HELLO" | translate }} <span>{{ name }}</span>
 </p>
 
-<app-authentication></app-authentication>
+<!-- <app-authentication routerLink="/authentication"></app-authentication>
+<app-welcome routerLink="/welcome"></app-welcome> -->
+
+<router-outlet></router-outlet>

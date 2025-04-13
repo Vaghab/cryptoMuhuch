@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from 'src/interfaces/interfaces';
+import { LoginUser, User } from 'src/interfaces/interfaces';
 
 const users: User[] = [
   {
@@ -45,10 +45,18 @@ export class MockServiceService {
 
     if (!match) {
       users.push(user);
-      console.log('User added successfully');
+      console.log('Пользователь добавлен');
       return;
     }
-    console.log('User already exists');
-    throw new Error('User already exists');
+    throw new Error('Пользователь уже существует');
+  }
+
+  searchUser(query: LoginUser): boolean {
+    return users.find(
+      (user: User) =>
+        user.login === query.login && user.password === query.password
+    )
+      ? true
+      : false;
   }
 }
