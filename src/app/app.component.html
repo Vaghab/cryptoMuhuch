@@ -2,9 +2,13 @@
   <div class="app-header__controls">
     <app-theme-toggle></app-theme-toggle>
     <app-language-toggle></app-language-toggle>
-    <dx-button (onClick)="logout()" routerLink="/authentication"
-      >Выйти</dx-button
-    >
+    <p-button
+      (onClick)="logout()"
+      routerLink="/authentication"
+      icon="pi pi-sign-out"
+      label="Logout"
+      severity="primary"
+    ></p-button>
   </div>
 </header>
 

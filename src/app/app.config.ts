@@ -9,6 +9,8 @@ import { HttpLoaderFactory } from '../translate';
 import { routes } from './app.routes';
 import { DOCUMENT } from '@angular/common';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeng/themes/aura';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -30,5 +32,20 @@ export const appConfig: ApplicationConfig = {
       }),
     ]),
     provideAnimationsAsync(),
+    providePrimeNG({
+      theme: {
+        preset: Aura,
+        options: {
+          darkModeSelector: 'html[data-theme="dark"]',
+        },
+      },
+      ripple: true,
+      inputVariant: 'filled',
+      translation: {
+        accept: 'Aceptar',
+        reject: 'Rechazar',
+        //Можно использовать перевод
+      },
+    }),
   ],
 };

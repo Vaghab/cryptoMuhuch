@@ -1,20 +1,13 @@
 <div class="auth-wrapper">
   <div class="auth-container">
-    <dx-tab-panel
-      width="100%"
-      [animationEnabled]="true"
-      [swipeEnabled]="true"
-      [dataSource]="dataSource"
-      [tabsPosition]="'top'"
-      [stylingMode]="'primary'"
-    >
-      <div *dxTemplate="let tabPanelItem of 'item'">
-        @if(tabPanelItem.title === 'Sign Up'){
-        <app-sign-up (newUser)="signUp($event)"></app-sign-up>
-        } @if(tabPanelItem.title === 'Sign In'){
-        <app-sign-in (loginUser)="signIn($event)"></app-sign-in>
+    <p-tabs value="Sign In">
+      <p-tablist>
+        @for (tab of tabs; track tab.value) {
+        <p-tabpanel [value]="tab.value">
+          {{ tab.content }}
+        </p-tabpanel>
         }
-      </div>
-    </dx-tab-panel>
+      </p-tablist>
+    </p-tabs>
   </div>
 </div>

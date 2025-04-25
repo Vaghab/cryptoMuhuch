@@ -5,10 +5,11 @@ import {
   inject,
   OnInit,
 } from '@angular/core';
+import { TabsModule } from 'primeng/tabs';
 
 import { SignUpComponent } from './signup/signup.component';
 import { AuthenticationService } from 'src/services/authentication.service';
-import { DxTabPanelModule } from 'devextreme-angular';
+import { DxTabPanelModule, DxTabsModule } from 'devextreme-angular';
 import { LoginUser, UserData } from 'src/interfaces/interfaces';
 import { Router } from '@angular/router';
 
@@ -17,17 +18,23 @@ import { Router } from '@angular/router';
   templateUrl: './authentication.component.html',
   styleUrls: ['./authentication.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [SignUpComponent, SignInComponent, DxTabPanelModule],
+  imports: [SignUpComponent, SignInComponent, DxTabPanelModule, TabsModule],
 })
 export class AuthenticationComponent implements OnInit {
   private readonly authService = inject(AuthenticationService);
   private readonly router = inject(Router);
 
-  dataSource: { title: string }[] = [
+  tabs = [
     {
       title: 'Sign In',
+      value: 'Sign In',
+      content: '<app-sign-up (newUser)="signUp($event)"></app-sign-up>',
     },
-    { title: 'Sign Up' },
+    {
+      title: 'Sign Up',
+      value: 'Sign Up',
+      content: '<app-sign-in (loginUser)="signIn($event)"></app-sign-in>',
+    },
   ];
 
   ngOnInit(): void {}

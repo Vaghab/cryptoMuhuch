@@ -1,5 +1,7 @@
-import { DxButtonModule, DxFormModule } from 'devextreme-angular';
 import { LoginUser } from 'src/interfaces/interfaces';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { PasswordModule } from 'primeng/password';
 
 import {
   ChangeDetectionStrategy,
@@ -10,11 +12,13 @@ import {
 import {
   FormControl,
   FormGroup,
+  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-sign-in',
@@ -22,11 +26,14 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./signin.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    DxFormModule,
     ReactiveFormsModule,
-    DxButtonModule,
     TranslateModule,
     RouterLink,
+    FormsModule,
+    ButtonModule,
+    InputGroupModule,
+    InputGroupAddonModule,
+    PasswordModule,
   ],
 })
 export class SignInComponent {

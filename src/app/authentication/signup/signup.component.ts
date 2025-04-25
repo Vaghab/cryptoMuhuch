@@ -1,8 +1,3 @@
-import {
-  DxButtonModule,
-  DxFormModule,
-  DxToastModule,
-} from 'devextreme-angular';
 import { UserData } from 'src/interfaces/interfaces';
 import { allowedEmailDomainsValidator } from 'src/utils/validators';
 
@@ -16,10 +11,15 @@ import {
 import {
   FormControl,
   FormGroup,
+  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { ButtonModule } from 'primeng/button';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { PasswordModule } from 'primeng/password';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 
 @Component({
   selector: 'app-sign-up',
@@ -27,11 +27,13 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./signup.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    DxFormModule,
     ReactiveFormsModule,
-    DxButtonModule,
     TranslateModule,
-    DxToastModule,
+    FormsModule,
+    ButtonModule,
+    InputGroupModule,
+    PasswordModule,
+    InputGroupAddonModule,
   ],
 })
 export class SignUpComponent {

@@ -1,20 +1,26 @@
-<dx-form
-  [formData]="signInForm.value"
-  [minColWidth]="200"
-  width="400"
-  requiredMessage="Field is required"
-  (onFieldDataChanged)="onFieldDataChanged($event)"
->
-  <dxi-item dataField="login"></dxi-item>
-  <dxi-item
-    dataField="password"
-    [editorOptions]="{ mode: 'password' }"
-  ></dxi-item
-></dx-form>
+<form [formGroup]="signInForm">
+  <p-inputgroup>
+    <p-inputgroup-addon>
+      <i class="pi pi-user"></i>
+    </p-inputgroup-addon>
+    <input pInputText formControlName="login" />
+  </p-inputgroup>
 
-<dx-button
-  text="Sign In"
+  <p-inputgroup>
+    <p-inputgroup-addon>
+      <i class="pi pi-lock"></i>
+    </p-inputgroup-addon>
+    <p-password
+      formControlName="password"
+      [toggleMask]="true"
+      feedback="false"
+    />
+  </p-inputgroup>
+</form>
+
+<p-button
+  label="Sign In"
   [disabled]="signInForm.invalid"
   (onClick)="signIn()"
   routerLink="/welcome"
-></dx-button>
+></p-button>
